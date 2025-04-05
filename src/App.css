@@ -1,38 +1,140 @@
+/* General Styles */
 .App {
   text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7f9;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+header h1 {
+  font-size: 3rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Glassmorphism Effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1); /* Light transparent background */
+  border-radius: 15px;
+  padding: 30px;
+  backdrop-filter: blur(10px); /* Adds the frosted glass effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  color: white; /* Text color inside the glass element */
+}
+
+/* Button and Result Panel Styles */
+button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+button:focus {
+  outline: none;
+}
+
+.result-panel {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result-panel h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.result-panel .result-item {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.result-panel .result-item span {
+  font-weight: bold;
+}
+
+.upload-form {
+  margin-top: 20px;
+}
+
+/* Report Button Styling */
+.report-button {
+  margin-top: 20px;
+  background-color: #007bff;
+}
+
+.report-button:hover {
+  background-color: #0056b3;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .result-panel {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .result-panel .result-item {
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+/* Custom Animation for File Upload Button */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
 }
+
+.upload-form button {
+  animation: fadeIn 1s ease-in-out;
+}
+
